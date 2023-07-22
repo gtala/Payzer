@@ -21,20 +21,20 @@ const NavMenu = ({ setStep, activeStep, steps }: NavMenuProps) => {
       minWidth="368px"
     >
       <MenuList>
-        {steps
-          .filter((s) => {
-            return s.title !== "Intro";
-          })
-          .map((s, i) => {
-            console.log(activeStep, i);
-            return (
-              <NavItem onClick={() => setStep(i)} active={activeStep === i}>
-                <Typography fontWeight="700" fontSize="20px">
-                  {s.title}
-                </Typography>
-              </NavItem>
-            );
-          })}
+        {steps.map((s, i) => {
+          console.log(activeStep, i);
+          return (
+            <NavItem
+              onClick={() => setStep(i)}
+              active={activeStep === i}
+              hidden={i === 0}
+            >
+              <Typography fontWeight="700" fontSize="20px">
+                {s.title}
+              </Typography>
+            </NavItem>
+          );
+        })}
       </MenuList>
     </NavMenuContainer>
   );
