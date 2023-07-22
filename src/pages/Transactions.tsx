@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import ArrowRightAltRoundedIcon from "@mui/icons-material/ArrowRightAltRounded";
 import SendIcon from "@mui/icons-material/SendRounded";
-import { Theme, TextField } from "@mui/material";
+import { TextField, Theme } from "@mui/material";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Divider from "@mui/material/Divider";
@@ -22,10 +22,8 @@ const Transactions = () => {
   const {
     chainId,
     chain,
-
     safeSelected,
     safeBalance,
-
     isRelayerLoading,
     relayTransaction,
     gelatoTaskId,

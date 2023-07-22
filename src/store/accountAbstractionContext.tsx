@@ -23,7 +23,7 @@ import { initialChain } from "src/chains/chains";
 import usePolling from "src/hooks/usePolling";
 import Chain from "src/models/chain";
 import getChain from "src/utils/getChain";
-import { isValidEthAddress, isValidValue } from "src/utils/getValidations";
+import { isValidValue } from "src/utils/getValidations";
 
 type accountAbstractionContextValue = {
   ownerAddress?: string;
@@ -233,7 +233,7 @@ const AccountAbstractionProvider = ({
     if (web3Provider) {
       setIsRelayerLoading(true);
 
-      if (!isValidEthAddress(recieverAddress)) {
+      if (!ethers.utils.isAddress(recieverAddress)) {
         setIsRelayerLoading(false);
       }
 

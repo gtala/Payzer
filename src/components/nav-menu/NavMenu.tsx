@@ -8,9 +8,10 @@ import Typography from "@mui/material/Typography";
 type NavMenuProps = {
   setStep: (newStep: number) => void;
   activeStep: number;
+  steps: any[];
 };
 
-const NavMenu = ({ setStep, activeStep }: NavMenuProps) => {
+const NavMenu = ({ setStep, activeStep, steps }: NavMenuProps) => {
   return (
     <NavMenuContainer
       padding="16px"
@@ -20,16 +21,20 @@ const NavMenu = ({ setStep, activeStep }: NavMenuProps) => {
       minWidth="368px"
     >
       <MenuList>
-        <NavItem onClick={() => setStep(1)} active={activeStep === 1}>
-          <Typography fontWeight="700" fontSize="20px">
-            Profile
-          </Typography>
-        </NavItem>
-        <NavItem onClick={() => setStep(2)} active={activeStep === 2}>
-          <Typography fontWeight="700" fontSize="20px" marginLeft="12px">
-            Transactions
-          </Typography>
-        </NavItem>
+        {steps
+          .filter((s) => {
+            return s.title !== "Intro";
+          })
+          .map((s, i) => {
+            console.log(activeStep, i);
+            return (
+              <NavItem onClick={() => setStep(i)} active={activeStep === i}>
+                <Typography fontWeight="700" fontSize="20px">
+                  {s.title}
+                </Typography>
+              </NavItem>
+            );
+          })}
       </MenuList>
     </NavMenuContainer>
   );

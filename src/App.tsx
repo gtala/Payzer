@@ -5,10 +5,11 @@ import { useCallback, useState } from "react";
 
 import Header from "src/components/header/Header";
 import Providers from "src/components/providers/Providers";
-import Transactions from "src/pages/Transactions";
 import NavMenu from "./components/nav-menu/NavMenu";
 import Intro from "./pages/Intro";
 import Profile from "./pages/profile";
+import { AddContact } from "./pages/AddContact";
+import Transactions from "./pages/Transactions";
 
 function App() {
   const [activeStep, setActiveStep] = useState(0);
@@ -37,7 +38,7 @@ function App() {
           margin="60px"
         >
           {!showSafeCoreVideo && (
-            <NavMenu setStep={setStep} activeStep={activeStep} />
+            <NavMenu setStep={setStep} activeStep={activeStep} steps={steps} />
           )}
 
           <main style={{ flexGrow: 1 }}>
@@ -56,13 +57,20 @@ const steps = [
   {
     // Intro step
     component: Intro,
+    title: "Intro",
   },
   {
     // Relay Kit step
     component: Profile,
+    title: "Profile",
   },
   {
     // Onramp Kit step
     component: Transactions,
+    title: "Transactions",
+  },
+  {
+    component: AddContact,
+    title: "Add Account",
   },
 ];
