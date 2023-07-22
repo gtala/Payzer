@@ -1,15 +1,60 @@
 import Typography from "@mui/material/Typography";
-import { storeIpfsData } from "../services/ipfsStore";
+import { listUploads, storeIpfsData } from "../services/ipfsStore";
+import { TextField } from "@mui/material";
+import { useState } from "react";
+import SendIcon from "@mui/icons-material/SendRounded";
+import Button from "@mui/material/Button";
 
 export const AddContact = () => {
-  const data = {
-    name: "Guille",
-    address: "0x1cDC2A4fF8d374D91a1161C142cc496FBF5547Ec",
-  };
-  storeIpfsData(data);
+  const [userAddress, setUserAddress] = useState("");
+  const [name, setName] = useState("");
+
+  listUploads();
+
   return (
-    <Typography variant="h2" component="h1">
-      Add account
-    </Typography>
+    <>
+      <Typography fontSize="14px">
+        Check the status of your sent transaction.
+      </Typography>
+
+      <TextField
+        fullWidth
+        label="Address"
+        value={userAddress}
+        variant="outlined"
+        onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+          setUserAddress(event.target.value);
+        }}
+      />
+      <TextField
+        fullWidth
+        value={name}
+        label="Name"
+        variant="outlined"
+        onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+          setName(event.target.value);
+        }}
+      />
+
+      <Button
+        startIcon={<SendIcon />}
+        variant="contained"
+        onClick={() => {
+          let data: any = {};
+          debugger;
+          data[userAddress] = {
+            name: name,
+          };
+
+          data["0x77A433B8e99336d5Fd52Bc5eB27175D9DBc9F9Ef"] = {
+            name: "pepe",
+          };
+
+          storeIpfsData(data);
+        }}
+      >
+        Send Transaction
+      </Button>
+    </>
   );
 };
