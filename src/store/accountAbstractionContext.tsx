@@ -207,17 +207,14 @@ const AccountAbstractionProvider = ({ children }: { children: JSX.Element }) => 
       setIsRelayerLoading(true)
 
       if (!isValidEthAddress(recieverAddress)) {
-        alert('Ingresa una address the eth que exista pancho')
         setIsRelayerLoading(false)
       }
 
       if(!isValidValue(value)) {
-        alert("Ingresa un numero valido pa!")
         setIsRelayerLoading(false)
       }
       
       if(+value > +safeBalance!) {
-        alert("Insufficient Balance")
         setIsRelayerLoading(false)
       }
 
