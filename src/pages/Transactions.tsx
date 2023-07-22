@@ -1,22 +1,22 @@
-import styled from '@emotion/styled'
-import ArrowRightAltRoundedIcon from '@mui/icons-material/ArrowRightAltRounded'
-import SendIcon from '@mui/icons-material/SendRounded'
-import { Theme, TextField } from '@mui/material'
-import Box from '@mui/material/Box'
-import Button from '@mui/material/Button'
-import Divider from '@mui/material/Divider'
-import LinearProgress from '@mui/material/LinearProgress'
-import Link from '@mui/material/Link'
-import Stack from '@mui/material/Stack'
-import Typography from '@mui/material/Typography'
-import { utils } from 'ethers'
-import { useState } from 'react'
-import AddressLabel from 'src/components/address-label/AddressLabel'
-import GelatoTaskStatusLabel from 'src/components/gelato-task-status-label/GelatoTaskStatusLabel'
-import SafeInfo from 'src/components/safe-info/SafeInfo'
-import { useAccountAbstraction } from 'src/store/accountAbstractionContext'
+import styled from "@emotion/styled";
+import ArrowRightAltRoundedIcon from "@mui/icons-material/ArrowRightAltRounded";
+import SendIcon from "@mui/icons-material/SendRounded";
+import { Theme, TextField } from "@mui/material";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Divider from "@mui/material/Divider";
+import LinearProgress from "@mui/material/LinearProgress";
+import Link from "@mui/material/Link";
+import Stack from "@mui/material/Stack";
+import Typography from "@mui/material/Typography";
+import { utils } from "ethers";
+import { useState } from "react";
+import AddressLabel from "src/components/address-label/AddressLabel";
+import GelatoTaskStatusLabel from "src/components/gelato-task-status-label/GelatoTaskStatusLabel";
+import SafeInfo from "src/components/safe-info/SafeInfo";
+import { useAccountAbstraction } from "src/store/accountAbstractionContext";
 
-const transferAmount = 0.01
+const transferAmount = 0.01;
 
 const Transactions = () => {
   const {
@@ -34,15 +34,16 @@ const Transactions = () => {
     setValue,
     recieverAddress,
     isAuthenticated,
-    loginWeb3Auth
-  } = useAccountAbstraction()
+    loginWeb3Auth,
+  } = useAccountAbstraction();
 
-  const [transactionHash, setTransactionHash] = useState<string>('')
+  const [transactionHash, setTransactionHash] = useState<string>("");
 
   // TODO: ADD PAY FEES USING USDC TOKEN
 
   const hasNativeFunds =
-    !!safeBalance && Number(utils.formatEther(safeBalance || '0')) > transferAmount
+    !!safeBalance &&
+    Number(utils.formatEther(safeBalance || "0")) > transferAmount;
 
   return (
     <>
@@ -50,10 +51,15 @@ const Transactions = () => {
         Transaction
       </Typography>
 
-      <Divider sx={{ margin: '32px 0 28px 0' }} />
+      <Divider sx={{ margin: "32px 0 28px 0" }} />
 
       {/* Relay Demo */}
-      <Typography variant="h4" component="h2" fontWeight="700" marginBottom="16px">
+      <Typography
+        variant="h4"
+        component="h2"
+        fontWeight="700"
+        marginBottom="16px"
+      >
         Execute any transactions
       </Typography>
 
@@ -84,7 +90,9 @@ const Transactions = () => {
             </Typography>
 
             {/* Safe Info */}
-            {safeSelected && <SafeInfo safeAddress={safeSelected} chainId={chainId} />}
+            {safeSelected && (
+              <SafeInfo safeAddress={safeSelected} chainId={chainId} />
+            )}
           </ConnectedContainer>
 
           {/* Relay Transaction */}
@@ -107,7 +115,9 @@ const Transactions = () => {
               />
             )}
 
-            {isRelayerLoading && <LinearProgress sx={{ alignSelf: 'stretch' }} />}
+            {isRelayerLoading && (
+              <LinearProgress sx={{ alignSelf: "stretch" }} />
+            )}
 
             {!isRelayerLoading && !gelatoTaskId && (
               <>
@@ -120,7 +130,7 @@ const Transactions = () => {
                   label="Set Address"
                   variant="outlined"
                   onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-                    setRecieverAddress(event.target.value)
+                    setRecieverAddress(event.target.value);
                   }}
                 />
 
@@ -129,7 +139,7 @@ const Transactions = () => {
                   label="Set Amount"
                   variant="outlined"
                   onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-                    setValue(event.target.value)
+                    setValue(event.target.value);
                   }}
                 />
                 <Button
@@ -157,11 +167,17 @@ const Transactions = () => {
 
               {safeSelected && (
                 <Stack gap={0.5} display="flex" flexDirection="row">
-                  <AddressLabel address={safeSelected} showCopyIntoClipboardButton={false} />
+                  <AddressLabel
+                    address={safeSelected}
+                    showCopyIntoClipboardButton={false}
+                  />
 
                   <ArrowRightAltRoundedIcon />
 
-                  <AddressLabel address={recieverAddress} showCopyIntoClipboardButton={false} />
+                  <AddressLabel
+                    address={recieverAddress}
+                    showCopyIntoClipboardButton={false}
+                  />
                 </Stack>
               )}
             </Stack>
@@ -169,13 +185,13 @@ const Transactions = () => {
         </Box>
       )}
     </>
-  )
-}
+  );
+};
 
-export default Transactions
+export default Transactions;
 
 const ConnectedContainer = styled(Box)<{
-  theme?: Theme
+  theme?: Theme;
 }>(
   ({ theme }) => `
   
@@ -183,4 +199,4 @@ const ConnectedContainer = styled(Box)<{
   border: 1px solid ${theme.palette.border.light};
   padding: 40px 32px;
 `
-)
+);

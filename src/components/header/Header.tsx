@@ -1,44 +1,45 @@
-import { useEffect } from 'react'
-import AppBar from '@mui/material/AppBar'
-import Toolbar from '@mui/material/Toolbar'
-import Container from '@mui/material/Container'
-import Box from '@mui/material/Box'
-import Tooltip from '@mui/material/Tooltip'
-import IconButton from '@mui/material/IconButton'
-import DarkThemeIcon from '@mui/icons-material/Brightness4'
-import LightThemeIcon from '@mui/icons-material/Brightness7'
+import { useEffect } from "react";
+import AppBar from "@mui/material/AppBar";
+import Toolbar from "@mui/material/Toolbar";
+import Container from "@mui/material/Container";
+import Box from "@mui/material/Box";
+import Tooltip from "@mui/material/Tooltip";
+import IconButton from "@mui/material/IconButton";
+import DarkThemeIcon from "@mui/icons-material/Brightness4";
+import LightThemeIcon from "@mui/icons-material/Brightness7";
 
-import safeHeaderLogo from 'src/assets/safe-header-logo.svg'
-import { useTheme } from 'src/store/themeContext'
-import { useAccountAbstraction } from 'src/store/accountAbstractionContext'
-import { Button } from '@mui/material'
-import ChainSelector from '../chain-selector/ChainSelector'
+import safeHeaderLogo from "src/assets/safe-header-logo.svg";
+import { useTheme } from "src/store/themeContext";
+import { useAccountAbstraction } from "src/store/accountAbstractionContext";
+import { Button } from "@mui/material";
+import ChainSelector from "../chain-selector/ChainSelector";
 
 type HeaderProps = {
-  setStep: (newStep: number) => void
-}
+  setStep: (newStep: number) => void;
+};
 
 function Header({ setStep }: HeaderProps) {
-  const { switchThemeMode, isDarkTheme } = useTheme()
+  const { switchThemeMode, isDarkTheme } = useTheme();
 
-  const { loginWeb3Auth, logoutWeb3Auth, isAuthenticated } = useAccountAbstraction()
+  const { loginWeb3Auth, logoutWeb3Auth, isAuthenticated } =
+    useAccountAbstraction();
 
   useEffect(() => {
     if (isAuthenticated) {
-      setStep(1)
+      setStep(1);
     } else {
-      setStep(0)
+      setStep(0);
     }
-  }, [isAuthenticated, setStep])
+  }, [isAuthenticated, setStep]);
 
   const connectWallet = () => {
-    loginWeb3Auth()
-  }
+    loginWeb3Auth();
+  };
 
   const disconnectWallet = () => {
-    logoutWeb3Auth()
-    setStep(0)
-  }
+    logoutWeb3Auth();
+    setStep(0);
+  };
 
   return (
     <AppBar position="static">
@@ -46,14 +47,20 @@ function Header({ setStep }: HeaderProps) {
         <Toolbar disableGutters>
           {/* App Logo */}
           <img
-            style={{ cursor: 'pointer' }}
+            style={{ cursor: "pointer" }}
             onClick={() => setStep(0)} // go to Home
             id="app-logo-header"
             src={safeHeaderLogo}
             alt="app logo"
           />
 
-          <Box display="flex" alignItems="center" justifyContent="flex-end" flexGrow={1} gap={2}>
+          <Box
+            display="flex"
+            alignItems="center"
+            justifyContent="flex-end"
+            flexGrow={1}
+            gap={2}
+          >
             {/* chain label */}
 
             <Box display="flex" gap={2} alignItems="center">
@@ -86,7 +93,7 @@ function Header({ setStep }: HeaderProps) {
         </Toolbar>
       </Container>
     </AppBar>
-  )
+  );
 }
 
-export default Header
+export default Header;

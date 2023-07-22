@@ -1,10 +1,10 @@
-import Typography from '@mui/material/Typography'
-import Box from '@mui/material/Box'
-import Divider from '@mui/material/Divider'
+import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
+import Divider from "@mui/material/Divider";
 
 type IntroProps = {
-  setStep: (newStep: number) => void
-}
+  setStep: (newStep: number) => void;
+};
 
 const Intro = ({ setStep }: IntroProps) => {
   return (
@@ -18,10 +18,9 @@ const Intro = ({ setStep }: IntroProps) => {
       <Typography variant="h1" fontSize="64px" lineHeight="76px">
         SafeAccount APP
       </Typography>
-      <Divider style={{ alignSelf: 'stretch', margin: '42px 0' }} />
+      <Divider style={{ alignSelf: "stretch", margin: "42px 0" }} />
     </Box>
-  )
-}
+  );
+};
 
-export default Intro
-
+export default Intro;
