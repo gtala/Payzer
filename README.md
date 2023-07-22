@@ -1,8 +1,6 @@
-# Account Abstraction demo app
+# Payzer 
 
-[The Safe{Core} SDK](https://github.com/safe-global/safe-core-sdk) allows builders to add account abstraction functionality into their apps. This demo is an example on how to use our different packages (Auth Kit, OnRamp Kit & Relay Kit).
-
-See the [Safe{Core} Account Abstraction SDK Docs](https://docs.safe.global/learn/safe-core-account-abstraction-sdk) for more details.
+A frictionless crypto payment system
 
 ## Installation
 
@@ -29,5 +27,5 @@ REACT_APP_STRIPE_PUBLIC_KEY=pk_test_51MZbmZKSn9ArdBimSyl5i8DqfcnlhyhJHD8bF2wKrGk
 Run the demo App:
 
 ```bash
-yarn start
+yarn dev
 ```
