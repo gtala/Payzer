@@ -46,10 +46,10 @@ const Schedule = () => {
           alignItems="flex-start"
           flexShrink={0}
         >
-          <Typography fontWeight="700">Send Transaction</Typography>
+          <Typography fontWeight="700">Select User</Typography>
 
           <Typography fontSize="14px">
-            Check the status of your sent transaction.
+            Select the user for the scheduel payment 
           </Typography>
           <DropdownUser />
         </ConnectedContainer>

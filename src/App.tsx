@@ -11,6 +11,7 @@ import Profile from "./pages/profile";
 import { AddContact } from "./pages/AddContact";
 import Transactions from "./pages/Transactions";
 import Schedule from "./pages/Schedule";
+import { Servicies } from "./pages/Servicies";
 
 function App() {
   const [activeStep, setActiveStep] = useState(0);
@@ -77,5 +78,9 @@ const steps = [
   {
     component: Schedule,
     title: "Schedule",
+  },
+  {
+    component: Servicies,
+    title: "Servicies",
   },
 ];
