@@ -22,7 +22,6 @@ const NavMenu = ({ setStep, activeStep, steps }: NavMenuProps) => {
     >
       <MenuList>
         {steps.map((s, i) => {
-          console.log(activeStep, i);
           return (
             <NavItem
               onClick={() => setStep(i)}

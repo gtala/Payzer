@@ -13,8 +13,8 @@ import useApi from "src/hooks/useApi";
 import safeLogoLight from "src/assets/safe-info-logo-light.svg";
 import safeLogoDark from "src/assets/safe-info-logo-dark.svg";
 import usePolling from "src/hooks/usePolling";
-import { useAccountAbstraction } from "src/store/accountAbstractionContext";
-import { useTheme } from "src/store/themeContext";
+import { useAccountAbstraction } from "src/services/accountAbstractionContext";
+import { useTheme } from "src/services/themeContext";
 
 type SafeInfoProps = {
   safeAddress: string;

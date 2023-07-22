@@ -9,8 +9,8 @@ import DarkThemeIcon from "@mui/icons-material/Brightness4";
 import LightThemeIcon from "@mui/icons-material/Brightness7";
 
 import safeHeaderLogo from "src/assets/safe-header-logo.svg";
-import { useTheme } from "src/store/themeContext";
-import { useAccountAbstraction } from "src/store/accountAbstractionContext";
+import { useTheme } from "src/services/themeContext";
+import { useAccountAbstraction } from "src/services/accountAbstractionContext";
 import { Button } from "@mui/material";
 import ChainSelector from "../chain-selector/ChainSelector";
 
