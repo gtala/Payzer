@@ -1,10 +1,9 @@
 import Typography from "@mui/material/Typography";
 import { listUploads } from "../services/ipfsStore";
-import { Box, Divider, Theme, styled } from "@mui/material";
-import  SliderComponent  from "src/components/slider-component/SliderComponent";
+import { Box, Divider, styled, Theme } from "@mui/material";
+import SliderComponent from "src/components/slider-component/SliderComponent";
 
 export const Servicies = () => {
-
   listUploads();
 
   return (
@@ -22,10 +21,10 @@ export const Servicies = () => {
         fontWeight="700"
         marginBottom="16px"
       >
-        Choose one of our main wallets
+        Choose a service to pay
       </Typography>
       <ConnectedContainer gap={3} display="flex" flexDirection="column">
-       <SliderComponent />
+        <SliderComponent />
       </ConnectedContainer>
     </>
   );

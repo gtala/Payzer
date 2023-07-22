@@ -4,8 +4,9 @@ import { useTheme } from "@material-ui/core";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import useSliderAlangoStyles from "./styles";
 import { Box } from "@mui/material";
-import img from "../../assets/intro-chip.png";
-import img1 from "../../assets/web3Auth_logo.png";
+import visa from "../../assets/Visa.png";
+import netflix from "../../assets/Netflix.png";
+import spotify from "../../assets/Spotify.png";
 
 export const SliderComponent = () => {
   const style = useSliderAlangoStyles();
@@ -15,46 +16,32 @@ export const SliderComponent = () => {
 
   const imgArray = [
     {
-      img: img1,
+      img: netflix,
     },
     {
-      img: img,
+      img: visa,
     },
-    {
-      img: img1,
-    },
-    {
-      img: img,
-    },
-    {
-      img: img1,
-    },
-    {
-      img: img,
-    },
-  ]
+    { img: spotify },
+  ];
 
   return (
-    <>
-      <Box className={!isMobile ? style.sliderCont : style.sliderContMob}>
-
-        <Slider
-          ref={sliderRef}
-          arrows={false}
-          className={
-            isMobile ? style.sliderContainerMobile : style.sliderContainer
-          }
-          slidesPerRow={1}
-          slidesToShow={isMobile ? 1 : 3}
-          centerMode={isMobile && true}
-          rows={1}
-        >
-          {imgArray.map((data, i) => (
-            <img key={i} src={data.img} alt={`Slider ${i + 1}`}></img>
-          ))}
-        </Slider>
-      </Box>
-    </>
+    <Box className={!isMobile ? style.sliderCont : style.sliderContMob}>
+      <Slider
+        ref={sliderRef}
+        arrows={false}
+        className={
+          isMobile ? style.sliderContainerMobile : style.sliderContainer
+        }
+        slidesPerRow={1}
+        slidesToShow={isMobile ? 1 : 3}
+        centerMode={isMobile && true}
+        rows={1}
+      >
+        {imgArray.map((data, i) => (
+          <img key={i} src={data.img} alt={`Slider ${i + 1}`}></img>
+        ))}
+      </Slider>
+    </Box>
   );
 };
 
