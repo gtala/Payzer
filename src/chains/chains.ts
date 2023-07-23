@@ -1,5 +1,17 @@
 import Chain from "src/chains/chainModel";
 
+export const goerliChain: Chain = {
+  id: "0x5",
+  token: "gETH",
+  label: "Görli",
+  shortName: "gor",
+  rpcUrl: "https://goerli.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161",
+  blockExplorerUrl: "https://goerli.etherscan.io",
+  color: "#fbc02d",
+  transactionServiceUrl: "https://safe-transaction-goerli.safe.global",
+  isStripePaymentsEnabled: false,
+};
+
 export const gnosisChain: Chain = {
   id: "0x64",
   token: "xDai",
@@ -37,6 +49,7 @@ export const mumbaiChain: Chain = {
 };
 
 const chains: Chain[] = [
+    goerliChain,
   gnosisChain,
   mumbaiChain,
   polygonChain,
