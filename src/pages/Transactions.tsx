@@ -14,7 +14,7 @@ import { useState } from "react";
 import AddressLabel from "src/components/address-label/AddressLabel";
 import GelatoTaskStatusLabel from "src/components/gelato-task-status-label/GelatoTaskStatusLabel";
 import SafeInfo from "src/components/safe-info/SafeInfo";
-import { useAccountAbstraction } from "src/store/accountAbstractionContext";
+import { useAccountAbstraction } from "src/services/accountAbstractionContext";
 
 const transferAmount = 0.01;
 

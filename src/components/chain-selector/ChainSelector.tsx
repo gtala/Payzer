@@ -4,7 +4,7 @@ import Select, { SelectChangeEvent } from "@mui/material/Select";
 
 import ChainLabel from "src/components/chain-label/ChainLabel";
 import chains from "src/chains/chains";
-import { useAccountAbstraction } from "src/store/accountAbstractionContext";
+import { useAccountAbstraction } from "src/services/accountAbstractionContext";
 
 const ChainSelector = () => {
   const { chain, setChainId } = useAccountAbstraction();

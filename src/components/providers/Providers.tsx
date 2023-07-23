@@ -1,5 +1,5 @@
-import { ThemeProvider } from "src/store/themeContext";
-import { AccountAbstractionProvider } from "src/store/accountAbstractionContext";
+import { ThemeProvider } from "src/services/themeContext";
+import { AccountAbstractionProvider } from "src/services/accountAbstractionContext";
 
 const Providers = ({ children }: { children: JSX.Element }) => {
   return (

@@ -3,7 +3,7 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 
-import { useAccountAbstraction } from "src/store/accountAbstractionContext";
+import { useAccountAbstraction } from "src/services/accountAbstractionContext";
 
 type SafesOwnedSelectorProps = {
   safeSelected: string;

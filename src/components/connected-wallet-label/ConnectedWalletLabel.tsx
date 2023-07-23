@@ -7,7 +7,7 @@ import { Theme } from "@mui/material";
 import LogoutIcon from "@mui/icons-material/LogoutRounded";
 
 import AddressLabel from "src/components/address-label/AddressLabel";
-import { useAccountAbstraction } from "src/store/accountAbstractionContext";
+import { useAccountAbstraction } from "src/services/accountAbstractionContext";
 import authLogo from "src/assets/web3Auth_logo.png";
 
 // TODO: rename this to connected owner?

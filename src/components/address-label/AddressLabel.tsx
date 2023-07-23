@@ -4,7 +4,7 @@ import IconButton from "@mui/material/IconButton";
 import OpenInNew from "@mui/icons-material/OpenInNew";
 import FileCopyOutlinedIcon from "@mui/icons-material/FileCopyOutlined";
 
-import { useAccountAbstraction } from "src/store/accountAbstractionContext";
+import { useAccountAbstraction } from "src/services/accountAbstractionContext";
 
 type AddressLabelProps = {
   address?: string;

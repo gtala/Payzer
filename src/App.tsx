@@ -10,6 +10,8 @@ import Intro from "./pages/Intro";
 import Profile from "./pages/profile";
 import { AddContact } from "./pages/AddContact";
 import Transactions from "./pages/Transactions";
+import Schedule from "./pages/Schedule";
+import { Servicies } from "./pages/Servicies";
 
 function App() {
   const [activeStep, setActiveStep] = useState(0);
@@ -57,7 +59,7 @@ const steps = [
   {
     // Intro step
     component: Intro,
-    title: "Intro",
+    title: "< Back",
   },
   {
     // Relay Kit step
@@ -72,5 +74,13 @@ const steps = [
   {
     component: AddContact,
     title: "Add Account",
+  },
+  {
+    component: Schedule,
+    title: "Schedule",
+  },
+  {
+    component: Servicies,
+    title: "Servicies",
   },
 ];

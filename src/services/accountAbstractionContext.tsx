@@ -21,7 +21,7 @@ import { Web3AuthOptions } from "@web3auth/modal";
 import { OpenloginAdapter } from "@web3auth/openlogin-adapter";
 import { initialChain } from "src/chains/chains";
 import usePolling from "src/hooks/usePolling";
-import Chain from "src/models/chain";
+import Chain from "src/chains/chainModel";
 import getChain from "src/utils/getChain";
 import { isValidValue } from "src/utils/getValidations";
 
